@@ -209,3 +209,53 @@
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
+
+@media (max-width: 991px) {
+  .about-grid {
+    gap: 3.5rem;
+  }
+  .about-visual {
+    position: relative;
+    top: 0;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    gap: 1.25rem;
+    padding-top: 0.5rem;
+    text-align: center;
+  }
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-desc {
+    font-size: 1rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .profile-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  .stats-grid {
+    gap: 0.5rem;
+  }
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+  .avatar-glow {
+    height: 40%;
+  }
+}

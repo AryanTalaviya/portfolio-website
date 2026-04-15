@@ -9,6 +9,12 @@
   gap: 1.25rem;
 }
 
+@media (max-width: 991px) {
+  .portfolio-grid {
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: 1fr 1fr;
@@ -17,16 +23,46 @@
   .col-span-3 {
     grid-column: span 2;
   }
+  .portfolio-overlay {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
   .col-span-1,
   .col-span-2,
   .col-span-3 {
     grid-column: span 1;
+  }
+  .portfolio-title {
+    font-size: 1.4rem;
+  }
+  .portfolio-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .portfolio-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(8, 8, 8, 0.95) 0%,
+      rgba(8, 8, 8, 0.6) 60%,
+      transparent 100%
+    );
+  }
+}
+
+@media (max-width: 400px) {
+  .portfolio-title {
+    font-size: 1.2rem;
+  }
+  .portfolio-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 }
 

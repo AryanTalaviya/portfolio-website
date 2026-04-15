@@ -379,31 +379,129 @@
    RESPONSIVE
    ═══════════════════════════════════════════════ */
 
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+
 @media (max-width: 991px) {
+  .hero-container {
+    gap: 3.5rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
   .hero-visual {
-    min-height: 300px;
+    min-height: 280px;
+    order: -1; /* Move visual above content on tablet/mobile */
   }
+  
   .text-ring-wrapper {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
   }
+  
+  .ring-center-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
   .orbit-ring {
-    width: 310px;
-    height: 310px;
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-badge { display: none; }
-  .hero-stats { gap: 1.5rem; }
-  .hero-visual {
-    display: none;
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 4rem;
   }
-  .scroll-indicator { display: none; }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .hero-stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1.5rem;
+  }
+  
+  .hero-stat {
+    min-width: 100px;
+  }
+
   .hero-orb {
-    width: 350px;
-    height: 350px;
-    top: 20%;
-    right: -20%;
+    width: 320px;
+    height: 320px;
+    top: 50%;
+    right: -10%;
+    transform: translateY(-50%);
+  }
+
+  .hero-badge {
+    margin-bottom: 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .scroll-indicator { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-stats {
+    gap: 1.25rem;
+  }
+  
+  .hero-stat-number {
+    font-size: 2.2rem;
+  }
+
+  .hero-visual {
+    min-height: 220px;
+  }
+
+  .text-ring-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orbit-ring {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
