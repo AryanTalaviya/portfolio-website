@@ -34,6 +34,26 @@ html {
   scroll-padding-top: 100px;
 }
 
+/* --- CUSTOM SCROLLBAR (Premium Sleek) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grey-light);
+  border-radius: 100px;
+  border: 2px solid var(--bg-color);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-glow);
+}
+
 body {
   font-family: var(--font-primary);
   background-color: var(--bg-color);
@@ -81,11 +101,89 @@ h2 { font-size: clamp(2rem, 5vw, 4rem); }
 h3 { font-size: clamp(1.4rem, 3vw, 2rem); }
 
 /* --- GRADIENT TEXT --- */
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent-glow), var(--accent-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* --- SCROLL PROGRESS BAR --- */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 10001; /* Above navbar */
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-glow), var(--accent-secondary));
+  box-shadow: 0 0 10px var(--accent-glow);
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* --- SIDE DOT NAVIGATION --- */
+.side-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1000;
+  pointer-events: all;
+}
+
+@media (max-width: 1024px) {
+  .side-nav { display: none; }
+}
+
+.side-nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--grey-border);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.side-nav-dot:hover {
+  border-color: var(--accent-glow);
+  transform: scale(1.2);
+}
+
+.side-nav-dot.active {
+  background: var(--accent-glow);
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 12px var(--accent-glow);
+  transform: scale(1.3);
+}
+
+.side-nav-tooltip {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: var(--bg-card);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  border: 1px solid var(--grey-border);
+}
+
+.side-nav-dot:hover .side-nav-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 /* --- LAYOUT UTILITIES --- */

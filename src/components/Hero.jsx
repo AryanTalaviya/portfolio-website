@@ -231,13 +231,7 @@ const Hero = () => {
 
       </div>
 
-      {/* Scroll indicator */}
-      <div className="scroll-indicator animate-fade-up delay-4">
-        <div className="scroll-mouse">
-          <div className="scroll-wheel" />
-        </div>
-        <span>Scroll</span>
-      </div>
+      {/* Scroll indicator removed for premium SideNav/ScrollProgress */}
     </section>
   );
 };
