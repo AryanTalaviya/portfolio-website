@@ -1,0 +1,100 @@
+.portfolio-page {
+  min-height: 100vh;
+}
+
+.page-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 120px;
+  margin-bottom: 2rem;
+  transition: color var(--transition-fast);
+}
+.page-back-link:hover { color: var(--accent-glow); }
+
+/* --- Hero Banner --- */
+.portfolio-page-hero {
+  position: relative;
+  padding: 3rem 0 5rem;
+  overflow: hidden;
+}
+
+.portfolio-page-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-glow);
+  margin-bottom: 1rem;
+}
+
+.portfolio-page-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.portfolio-page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* --- CTA Section --- */
+.portfolio-page-cta {
+  padding: 0 0 6rem;
+}
+
+.page-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-radius: 24px;
+}
+
+.page-cta-inner h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-cta-inner p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.page-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-cta-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cta-social-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--grey-border);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.cta-social-btn:hover {
+  border-color: var(--accent-glow);
+  color: var(--accent-glow);
+  background: rgba(255, 107, 26, 0.08);
+  transform: translateY(-2px);
+}
