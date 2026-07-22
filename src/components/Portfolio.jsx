@@ -4,43 +4,12 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { projects } from '../data/config';
 import './Portfolio.css';
 
-// --- IMAGE IMPORTS ---
-// Real Graphic Design Work
-import ecoCover from '../assets/work_eco_cover.jpg';
-import ecoStep1 from '../assets/work_eco_step1.jpg';
-import ecoStep3 from '../assets/work_eco_step3.jpg';
-import ecoStep4 from '../assets/work_eco_step4.jpg';
-import ecoStep5 from '../assets/work_eco_step5.jpg';
-
-// Case Studies
-import iotGateway from '../assets/project_iot_gateway.png';
-import marketingCampaign from '../assets/project_marketing_campaign.png';
-import gdscBranding from '../assets/project_gdsc_branding.png';
-import esp32Prototype from '../assets/project_esp32_prototype.png';
-
 // Six7 Studio Campaign — images served from public/six7/ folder
 const SIX7_BASE = `${import.meta.env.BASE_URL}six7/`;
-const six7Post01 = SIX7_BASE + 'six7_post_01.png';
-const six7Post02 = SIX7_BASE + 'six7_post_02.png';
-const six7Post03 = SIX7_BASE + 'six7_post_03.png';
-const six7Post04 = SIX7_BASE + 'six7_post_04.png';
 const six7Cover  = SIX7_BASE + 'six7_cover_grid.png';
 
 // Map imageKey strings (from config.js) to the actual imported images
 const imageMap = {
-  ecoCover,
-  ecoStep1,
-  ecoStep3,
-  ecoStep4,
-  ecoStep5,
-  iotGateway,
-  marketingCampaign,
-  gdscBranding,
-  esp32Prototype,
-  six7Post01,
-  six7Post02,
-  six7Post03,
-  six7Post04,
   six7Cover,
 };
 
