@@ -18,6 +18,14 @@ import marketingCampaign from '../assets/project_marketing_campaign.png';
 import gdscBranding from '../assets/project_gdsc_branding.png';
 import esp32Prototype from '../assets/project_esp32_prototype.png';
 
+// Six7 Studio Campaign — images served from public/six7/ folder
+const SIX7_BASE = `${import.meta.env.BASE_URL}six7/`;
+const six7Post01 = SIX7_BASE + 'six7_post_01.png';
+const six7Post02 = SIX7_BASE + 'six7_post_02.png';
+const six7Post03 = SIX7_BASE + 'six7_post_03.png';
+const six7Post04 = SIX7_BASE + 'six7_post_04.png';
+const six7Cover  = SIX7_BASE + 'six7_cover_grid.png';
+
 // Map imageKey strings (from config.js) to the actual imported images
 const imageMap = {
   ecoCover,
@@ -29,6 +37,11 @@ const imageMap = {
   marketingCampaign,
   gdscBranding,
   esp32Prototype,
+  six7Post01,
+  six7Post02,
+  six7Post03,
+  six7Post04,
+  six7Cover,
 };
 
 const Portfolio = ({ preview = false }) => {
@@ -36,7 +49,7 @@ const Portfolio = ({ preview = false }) => {
   const displayProjects = preview ? projects.slice(0, 3) : projects;
 
   return (
-    <section id="work" className="section portfolio">
+    <section id="portfolio" className="section portfolio">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Selected <span className="text-gradient">Projects</span></h2>

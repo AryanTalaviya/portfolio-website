@@ -47,7 +47,7 @@ const CVPage = () => {
                 <LinkedinIcon size={15} />
               </a>
             </div>
-            <a href="/CV.pdf" download className="btn btn-primary cv-download-btn">
+            <a href="/Aryan's-Resume.pdf" download className="btn btn-primary cv-download-btn">
               <Download size={16} /> Download PDF
             </a>
           </div>
@@ -202,7 +202,7 @@ const CVPage = () => {
           <p>Interested in my work or looking to discuss an opportunity?</p>
           <div className="cv-cta-actions">
              <Link to="/portfolio" className="btn btn-primary">View Portfolio</Link>
-             <a href="#contact" className="btn btn-outline">Let's Connect</a>
+             <Link to="/?scrollTo=contact" className="btn btn-outline">Let's Connect</Link>
           </div>
         </div>
       </div>

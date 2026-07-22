@@ -5,6 +5,8 @@
   "type": "module",
   "homepage": "https://AryanTalaviya.github.io/portfolio-website",
   "scripts": {
+    "setup": "node setup-six7-images.mjs",
+    "predev": "node setup-six7-images.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

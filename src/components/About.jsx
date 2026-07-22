@@ -68,7 +68,7 @@ const About = () => {
             </div>
 
             <div className="profile-actions">
-              <a href="/CV.pdf" download className="btn btn-primary">
+              <a href="/Aryan's-Resume.pdf" download className="btn btn-primary">
                 <Download size={18} /> Download CV
               </a>
               <a href="#contact" className="btn btn-outline">

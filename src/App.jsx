@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useSearchParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
@@ -79,14 +79,30 @@ const SideNav = () => {
 };
 
 // Home page = Hero + Portfolio preview + About + Contact
-const HomePage = () => (
-  <main>
-    <Hero />
-    <Portfolio preview={true} />
-    <About />
-    <Contact />
-  </main>
-);
+const HomePage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const scrollTo = searchParams.get('scrollTo');
+    if (scrollTo) {
+      const el = document.getElementById(scrollTo);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+      // Clean up the query param so back/forward navigation works cleanly
+      setSearchParams({}, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
+
+  return (
+    <main>
+      <Hero />
+      <Portfolio preview={true} />
+      <About />
+      <Contact />
+    </main>
+  );
+};
 
 function App() {
   return (
