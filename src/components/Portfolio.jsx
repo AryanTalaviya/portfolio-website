@@ -15,7 +15,7 @@ const imageMap = {
 
 const Portfolio = ({ preview = false }) => {
   const [hoveredId, setHoveredId] = useState(null);
-  const displayProjects = preview ? projects.slice(0, 3) : projects;
+  const displayProjects = projects; // Only Six7 card — no slicing needed
 
   return (
     <section id="portfolio" className="section portfolio">

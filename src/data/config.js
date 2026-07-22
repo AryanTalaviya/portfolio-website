@@ -30,7 +30,7 @@ export const socials = {
 export const stats = [
   { number: "6th", label: "Semester" },
   { number: "3+", label: "Internships" },
-  { number: "10+", label: "Projects" },
+  { number: "5", label: "Projects" },
 ];
 
 // --- SKILLS (Scrolling Marquee) ---
