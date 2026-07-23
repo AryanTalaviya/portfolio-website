@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import PortfolioPage from './pages/PortfolioPage';
 import CVPage from './pages/CVPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import { profile, socials } from './data/config';
 import './App.css';
 
@@ -115,6 +116,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/cv" element={<CVPage />} />
+          <Route path="/project/:id" element={<ProjectDetailPage />} />
         </Routes>
         <footer className="footer">
           <div className="container">

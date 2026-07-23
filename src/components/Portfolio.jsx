@@ -13,7 +13,7 @@ const six7Post03 = SIX7_BASE + 'six7_post_03.png';
 const six7Post04 = SIX7_BASE + 'six7_post_04.png';
 
 // Map imageKey strings (from config.js) to the actual imported images
-const imageMap = {
+export const imageMap = {
   six7Cover,
   six7Post01,
   six7Post02,
@@ -62,9 +62,9 @@ const Portfolio = ({ preview = false }) => {
                     <p className="portfolio-desc">{project.description}</p>
                     <div className="portfolio-meta">
                       <span className="portfolio-year">{project.year}</span>
-                      <button className="portfolio-view-btn">
+                      <Link to={`/project/${project.id}`} className="portfolio-view-btn">
                         Explore <ExternalLink size={14} />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
