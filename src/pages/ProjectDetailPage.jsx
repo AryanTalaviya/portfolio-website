@@ -53,7 +53,12 @@ const ProjectDetailPage = () => {
           <div className="gallery-grid">
             {project.gallery?.map((imgKey, index) => (
               <div key={index} className="gallery-item animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <img src={imageMap[imgKey]} alt={`${project.title} image ${index + 1}`} className="gallery-image" />
+                <img 
+                  src={imageMap[imgKey]} 
+                  alt={`${project.title} image ${index + 1}`} 
+                  className="gallery-image"
+                  style={project.imageStyle || {}} 
+                />
               </div>
             ))}
           </div>

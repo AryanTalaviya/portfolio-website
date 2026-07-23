@@ -6,6 +6,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 320px;
   gap: 1.25rem;
 }
 
@@ -38,6 +39,12 @@
   .col-span-3 {
     grid-column: span 1;
   }
+  .row-span-2 {
+    grid-row: span 1;
+  }
+  .portfolio-grid {
+    grid-auto-rows: 400px;
+  }
   .portfolio-title {
     font-size: 1.4rem;
   }
@@ -69,26 +76,24 @@
 .col-span-1 { grid-column: span 1; }
 .col-span-2 { grid-column: span 2; }
 .col-span-3 { grid-column: span 3; }
+.row-span-2 { grid-row: span 2; }
 
 /* --- Portfolio card --- */
 .portfolio-item {
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+  height: 100%;
 }
 
 .portfolio-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   overflow: hidden;
   border-radius: 20px;
   background: var(--bg-card);
   border: 1px solid var(--grey-border);
-}
-
-.col-span-3 .portfolio-image-wrapper {
-  aspect-ratio: 21 / 9;
 }
 
 .portfolio-image {

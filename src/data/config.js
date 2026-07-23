@@ -46,7 +46,7 @@ export const projects = [
     category: "Brand Identity & Social Media",
     description: "Designed a comprehensive social media campaign for Six7 Studio, a premium menswear brand. Features bold typography and dark cinematic aesthetics.",
     imageKey: "six7Cover",
-    span: "col-span-2",
+    span: "col-span-2 row-span-1",
     tags: ["Fashion", "Branding", "Social Media"],
     year: "2025",
     gallery: [
@@ -63,9 +63,8 @@ export const projects = [
     category: "Visual Identity & Artwork",
     description: "Designed a collection of bold, vibrant promotional artwork and posters for POSTRD.",
     imageKey: "postrdCover",
-    span: "col-span-2",
-    wrapperStyle: { aspectRatio: '4/3' },
-    imageStyle: { objectPosition: 'top' },
+    span: "col-span-1 row-span-2",
+    imageStyle: { objectPosition: 'center', transform: 'scale(1.15)' },
     tags: ["Illustration", "Artwork", "Posters"],
     year: "2026",
     gallery: [
