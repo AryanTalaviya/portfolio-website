@@ -63,7 +63,9 @@ export const projects = [
     category: "Visual Identity & Artwork",
     description: "Designed a collection of bold, vibrant promotional artwork and posters for POSTRD.",
     imageKey: "postrdCover",
-    span: "col-span-1",
+    span: "col-span-2",
+    wrapperStyle: { aspectRatio: '4/3' },
+    imageStyle: { objectPosition: 'top' },
     tags: ["Illustration", "Artwork", "Posters"],
     year: "2026",
     gallery: [
