@@ -46,7 +46,7 @@ export const projects = [
     category: "Brand Identity & Social Media",
     description: "Designed a comprehensive social media campaign for Six7 Studio, a premium menswear brand. Features bold typography and dark cinematic aesthetics.",
     imageKey: "six7Cover",
-    span: "col-span-2 row-span-1",
+    span: "col-span-2",
     tags: ["Fashion", "Branding", "Social Media"],
     year: "2025",
     gallery: [
@@ -63,7 +63,7 @@ export const projects = [
     category: "Print Design & Layout",
     description: "Designed a clean, professional, and accessible informational flyer for NDIS participants.",
     imageKey: "pcCover",
-    span: "col-span-1 row-span-2",
+    span: "col-span-1",
     tags: ["Healthcare", "Layout", "Print"],
     year: "2026",
     gallery: [
@@ -78,7 +78,7 @@ export const projects = [
     category: "Visual Identity & Artwork",
     description: "Designed a collection of bold, vibrant promotional artwork and posters for POSTRD.",
     imageKey: "postrdCover",
-    span: "col-span-1 row-span-2",
+    span: "col-span-1",
     imageStyle: { objectPosition: 'center', transform: 'scale(1.15)' },
     tags: ["Illustration", "Artwork", "Posters"],
     year: "2026",
