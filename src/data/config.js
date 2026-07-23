@@ -57,6 +57,22 @@ export const projects = [
       "six7Post04",
     ],
   },
+  {
+    id: "postrd",
+    title: "POSTRD — Poster Collection",
+    category: "Visual Identity & Artwork",
+    description: "Designed a collection of bold, vibrant promotional artwork and posters for POSTRD.",
+    imageKey: "postrdCover",
+    span: "col-span-1",
+    tags: ["Illustration", "Artwork", "Posters"],
+    year: "2026",
+    gallery: [
+      "postrdCover",
+      "postrd01",
+      "postrd02",
+      "postrd03"
+    ],
+  },
 ];
 
 // --- CV PAGE — RESUME INFO ---

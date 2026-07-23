@@ -12,6 +12,12 @@ const six7Post02 = SIX7_BASE + 'six7_post_02.png';
 const six7Post03 = SIX7_BASE + 'six7_post_03.png';
 const six7Post04 = SIX7_BASE + 'six7_post_04.png';
 
+const POSTRD_BASE = `${import.meta.env.BASE_URL}postrd/`;
+const postrdCover = POSTRD_BASE + 'postrd_cover.png';
+const postrd01 = POSTRD_BASE + 'postrd_01.png';
+const postrd02 = POSTRD_BASE + 'postrd_02.png';
+const postrd03 = POSTRD_BASE + 'postrd_03.png';
+
 // Map imageKey strings (from config.js) to the actual imported images
 export const imageMap = {
   six7Cover,
@@ -19,6 +25,10 @@ export const imageMap = {
   six7Post02,
   six7Post03,
   six7Post04,
+  postrdCover,
+  postrd01,
+  postrd02,
+  postrd03,
 };
 
 const Portfolio = ({ preview = false }) => {
