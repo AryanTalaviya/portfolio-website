@@ -29,7 +29,7 @@ const Loader = ({ onLoadingComplete }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            A.
+            ARYAN.
           </motion.div>
           <motion.div
             className="loader-progress-bar-container"

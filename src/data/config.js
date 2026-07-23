@@ -8,10 +8,10 @@ export const profile = {
   name: "Aryan Talaviya",
   displayName: "ARYAN TALAVIYA.",
   title: "Information Technology Student | Aspiring IT Intern",
-  subtitle: "6th Semester IT Student @ SAL College",
+  subtitle: "7th Semester IT Student @ SAL College",
   tagline: "Visual Alchemist.", // Keeping the creative brand
   bio: [
-    "I am a passionate and dedicated Information Technology student currently in my 6th semester at SAL College of Engineering (GTU).",
+    "I am a passionate and dedicated Information Technology student currently in my 7th semester at SAL College of Engineering (GTU).",
     "I am seeking an internship opportunity where I can apply my academic knowledge, gain practical experience, and grow in a real-world IT environment. My background blends technical IoT development with a strong eye for visual communication.",
   ],
   location: "Ahmedabad, Gujarat, India",
@@ -28,7 +28,7 @@ export const socials = {
 
 // --- STATS (Under Profile) ---
 export const stats = [
-  { number: "6th", label: "Semester" },
+  { number: "7th", label: "Semester" },
   { number: "3+", label: "Internships" },
   { number: "5", label: "Projects" },
 ];
@@ -157,7 +157,7 @@ export const cvData = {
       degree: "Bachelor of Engineering in Information Technology",
       school: "SAL College of Engineering (GTU)",
       period: "2023 - Present",
-      status: "Currently in 6th Semester",
+      status: "Currently in 7th Semester",
     },
     {
       degree: "Higher Secondary Education (12th Grade)",
