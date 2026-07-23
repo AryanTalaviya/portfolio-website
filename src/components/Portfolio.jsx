@@ -18,6 +18,11 @@ const postrd01 = POSTRD_BASE + 'postrd_01.png';
 const postrd02 = POSTRD_BASE + 'postrd_02.png';
 const postrd03 = POSTRD_BASE + 'postrd_03.png';
 
+const PINK_BASE = `${import.meta.env.BASE_URL}pinkcomfort/`;
+const pcCover = PINK_BASE + 'pc_cover.jpg';
+const pc01 = PINK_BASE + 'pc_01.jpg';
+const pc02 = PINK_BASE + 'pc_02.jpg';
+
 // Map imageKey strings (from config.js) to the actual imported images
 export const imageMap = {
   six7Cover,
@@ -29,6 +34,9 @@ export const imageMap = {
   postrd01,
   postrd02,
   postrd03,
+  pcCover,
+  pc01,
+  pc02,
 };
 
 const Portfolio = ({ preview = false }) => {
@@ -54,11 +62,12 @@ const Portfolio = ({ preview = false }) => {
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="portfolio-image-wrapper">
+              <div className="portfolio-image-wrapper" style={project.wrapperStyle || {}}>
                 <img
                   src={imageMap[project.imageKey]}
                   alt={project.title}
                   className="portfolio-image"
+                  style={project.imageStyle || {}}
                 />
                 <div className={`portfolio-overlay ${hoveredId === project.id ? 'visible' : ''}`}>
                   <div className="portfolio-info">

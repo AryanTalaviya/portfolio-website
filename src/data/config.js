@@ -74,6 +74,21 @@ export const projects = [
       "postrd03"
     ],
   },
+  {
+    id: "pinkcomfort",
+    title: "Pink Comfort — Positive Behaviour Support",
+    category: "Print Design & Layout",
+    description: "Designed a clean, professional, and accessible informational flyer for NDIS participants.",
+    imageKey: "pcCover",
+    span: "col-span-1 row-span-2",
+    tags: ["Healthcare", "Layout", "Print"],
+    year: "2026",
+    gallery: [
+      "pcCover",
+      "pc01",
+      "pc02"
+    ],
+  },
 ];
 
 // --- CV PAGE — RESUME INFO ---
