@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { profile, stats } from '../data/config';
@@ -178,10 +179,15 @@ const Hero = () => {
       <div className="container hero-container">
 
         <div className="hero-content">
-          <div className="hero-badge animate-fade-up">
+          <motion.div 
+            className="hero-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <span className="pulse" />
             {profile.availability}
-          </div>
+          </motion.div>
 
           <h2 className="hero-subtitle animate-fade-up delay-1">{profile.subtitle}</h2>
 
@@ -218,7 +224,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-visual animate-fade-up delay-4">
+        <motion.div 
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <TextRing />
 
           {/* Floating orbit dots */}
@@ -227,7 +238,7 @@ const Hero = () => {
             <div className="orbit-dot delay" />
             <div className="orbit-dot delay-2x" />
           </div>
-        </div>
+        </motion.div>
 
       </div>
 

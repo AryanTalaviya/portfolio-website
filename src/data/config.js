@@ -91,6 +91,28 @@ export const projects = [
   },
 ];
 
+// --- TESTIMONIALS ---
+export const testimonials = [
+  {
+    id: 1,
+    quote: "Aryan brought an incredible level of detail and creativity to our brand campaign. The execution was flawless and exactly what we needed to elevate our visual identity.",
+    name: "Client Name",
+    title: "Marketing Director, Six7 Studio"
+  },
+  {
+    id: 2,
+    quote: "A highly dedicated professional. Aryan's ability to translate complex ideas into clean, user-friendly designs is unmatched. I highly recommend working with him.",
+    name: "Professor / Client",
+    title: "IT Project Manager"
+  },
+  {
+    id: 3,
+    quote: "Working with Aryan was a seamless experience. He delivered the promotional posters ahead of schedule and the modern aesthetic perfectly captured our audience.",
+    name: "Client Name",
+    title: "Founder, POSTRD"
+  }
+];
+
 // --- CV PAGE — RESUME INFO ---
 export const cvData = {
   headline: "Aspiring IT professional with hands-on experience in IoT development and creative design, looking to bridge the gap between hardware and user experience.",

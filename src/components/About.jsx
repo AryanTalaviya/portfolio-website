@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Download, MapPin, Mail } from 'lucide-react';
 import { InstagramIcon, LinkedinIcon } from './SocialIcons';
 import { profile, stats, skills, socials } from '../data/config';
@@ -12,7 +13,13 @@ const About = () => {
         <div className="about-grid">
 
           {/* Profile Card */}
-          <div className="about-visual glass">
+          <motion.div 
+            className="about-visual glass"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="designer-avatar">
               <img src={profileAvatar} alt={`${profile.name} - Graphic Designer`} className="designer-avatar-img" />
               <div className="avatar-glow"></div>
@@ -45,10 +52,16 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="about-content">
+          <motion.div 
+            className="about-content"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <div className="profile-header">
               <h2 className="section-title">Behind The <span className="text-gradient">Screen.</span></h2>
               <div className="section-line"></div>
@@ -75,7 +88,7 @@ const About = () => {
                 Let's Talk
               </a>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

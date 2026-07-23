@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { projects } from '../data/config';
@@ -40,55 +41,70 @@ export const imageMap = {
 };
 
 const Portfolio = ({ preview = false }) => {
-  const [hoveredId, setHoveredId] = useState(null);
   const displayProjects = preview ? projects.slice(0, 3) : projects;
 
   return (
     <section id="portfolio" className="section portfolio">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Selected <span className="text-gradient">Projects</span></h2>
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">
+            {preview ? (
+              <>Selected <span className="text-gradient">Projects.</span></>
+            ) : (
+              <>All <span className="text-gradient">Projects.</span></>
+            )}
+          </h2>
           <div className="section-line"></div>
           {!preview && (
             <p className="section-subtitle">A professional showcase of my graphic design expertise and IT hardware solutions.</p>
           )}
-        </div>
+        </motion.div>
 
         <div className="portfolio-grid">
-          {displayProjects.map((project) => (
-            <div
-              key={project.id}
-              className={`portfolio-item ${project.span}`}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
+          {displayProjects.map((project, index) => (
+            <motion.div 
+              key={project.id} 
+              className={`portfolio-item ${project.span || 'col-span-1'}`}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <div className="portfolio-image-wrapper" style={project.wrapperStyle || {}}>
-                <img
-                  src={imageMap[project.imageKey]}
-                  alt={project.title}
-                  className="portfolio-image"
-                  style={project.imageStyle || {}}
-                />
-                <div className={`portfolio-overlay ${hoveredId === project.id ? 'visible' : ''}`}>
-                  <div className="portfolio-info">
-                    <div className="portfolio-tags">
-                      {project.tags?.map(tag => (
-                        <span key={tag} className="portfolio-tag">{tag}</span>
-                      ))}
-                    </div>
-                    <span className="portfolio-category">{project.category}</span>
-                    <h3 className="portfolio-title">{project.title}</h3>
-                    <p className="portfolio-desc">{project.description}</p>
-                    <div className="portfolio-meta">
-                      <span className="portfolio-year">{project.year}</span>
-                      <Link to={`/project/${project.id}`} className="portfolio-view-btn">
-                        Explore <ExternalLink size={14} />
-                      </Link>
+              <Link to={`/project/${project.id}`} style={{ display: 'block', height: '100%', textDecoration: 'none' }}>
+                <div className="portfolio-image-wrapper" style={project.wrapperStyle || {}}>
+                  <img
+                    src={imageMap[project.imageKey]}
+                    alt={project.title}
+                    className="portfolio-image"
+                    style={project.imageStyle || {}}
+                  />
+                  <div className="portfolio-overlay">
+                    <div className="portfolio-info">
+                      <div className="portfolio-tags">
+                        {project.tags?.map(tag => (
+                          <span key={tag} className="portfolio-tag">{tag}</span>
+                        ))}
+                      </div>
+                      <span className="portfolio-category">{project.category}</span>
+                      <h3 className="portfolio-title">{project.title}</h3>
+                      <p className="portfolio-desc">{project.description}</p>
+                      <div className="portfolio-meta">
+                        <span className="portfolio-year">{project.year}</span>
+                        <div className="portfolio-view-btn">
+                          Explore <ExternalLink size={14} />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 

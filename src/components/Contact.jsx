@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { InstagramIcon, LinkedinIcon } from './SocialIcons';
 import { profile, socials } from '../data/config';
 import './Contact.css';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', type: '', message: '' });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`New Project Inquiry: ${formData.type || 'Portfolio'}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <div className="contact-wrapper glass">
+        <motion.div 
+          className="contact-wrapper glass"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <div className="contact-info">
             <p className="contact-eyebrow">Get In Touch</p>
             <h2 className="contact-title">Let's Create<br />Something <span className="text-gradient">Epic.</span></h2>
@@ -31,31 +47,31 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <input id="contact-name" type="text" placeholder="Your Name" required className="form-input" />
+              <input id="contact-name" type="text" placeholder="Your Name" required className="form-input" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
             </div>
             <div className="form-group">
-              <input id="contact-email" type="email" placeholder="Your Email" required className="form-input" />
+              <input id="contact-email" type="email" placeholder="Your Email" required className="form-input" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
             </div>
             <div className="form-group">
-              <select id="contact-type" className="form-input" defaultValue="">
+              <select id="contact-type" className="form-input" value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})} required>
                 <option value="" disabled>Project Type</option>
-                <option>Brand Identity</option>
-                <option>Poster / Print</option>
-                <option>Motion Graphics</option>
-                <option>Web Design</option>
-                <option>Other</option>
+                <option value="Brand Identity">Brand Identity</option>
+                <option value="Poster / Print">Poster / Print</option>
+                <option value="Motion Graphics">Motion Graphics</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div className="form-group">
-              <textarea id="contact-message" placeholder="Tell me about your project..." required className="form-input" rows="4"></textarea>
+              <textarea id="contact-message" placeholder="Tell me about your project..." required className="form-input" rows="4" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
             </div>
             <button type="submit" className="btn btn-primary btn-submit">
               <Mail size={16} /> Send Message
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

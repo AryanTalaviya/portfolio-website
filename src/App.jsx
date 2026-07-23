@@ -4,7 +4,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
+import Loader from './components/Loader';
 import PortfolioPage from './pages/PortfolioPage';
 import CVPage from './pages/CVPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
@@ -100,34 +102,40 @@ const HomePage = () => {
       <Hero />
       <Portfolio preview={true} />
       <About />
+      <Testimonials />
       <Contact />
     </main>
   );
 };
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <BrowserRouter basename="/portfolio-website">
-      <div className="app">
-        <ScrollProgress />
-        <SideNav />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/cv" element={<CVPage />} />
-          <Route path="/project/:id" element={<ProjectDetailPage />} />
-        </Routes>
-        <footer className="footer">
-          <div className="container">
-            <p>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
-            <div className="footer-socials">
-              <a href={socials.instagram} target="_blank" rel="noreferrer">Instagram</a>
-              <a href={socials.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      <Loader onLoadingComplete={() => setIsLoaded(true)} />
+      {isLoaded && (
+        <div className="app">
+          <ScrollProgress />
+          <SideNav />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/cv" element={<CVPage />} />
+            <Route path="/project/:id" element={<ProjectDetailPage />} />
+          </Routes>
+          <footer className="footer">
+            <div className="container">
+              <p>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
+              <div className="footer-socials">
+                <a href={socials.instagram} target="_blank" rel="noreferrer">Instagram</a>
+                <a href={socials.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
             </div>
-          </div>
-        </footer>
-      </div>
+          </footer>
+        </div>
+      )}
     </BrowserRouter>
   );
 }
