@@ -7,15 +7,23 @@ import './Portfolio.css';
 // Six7 Studio Campaign — images served from public/six7/ folder
 const SIX7_BASE = `${import.meta.env.BASE_URL}six7/`;
 const six7Cover  = SIX7_BASE + 'six7_cover_grid.png';
+const six7Post01 = SIX7_BASE + 'six7_post_01.png';
+const six7Post02 = SIX7_BASE + 'six7_post_02.png';
+const six7Post03 = SIX7_BASE + 'six7_post_03.png';
+const six7Post04 = SIX7_BASE + 'six7_post_04.png';
 
 // Map imageKey strings (from config.js) to the actual imported images
 const imageMap = {
   six7Cover,
+  six7Post01,
+  six7Post02,
+  six7Post03,
+  six7Post04,
 };
 
 const Portfolio = ({ preview = false }) => {
   const [hoveredId, setHoveredId] = useState(null);
-  const displayProjects = projects; // Only Six7 card — no slicing needed
+  const displayProjects = preview ? projects.slice(0, 3) : projects;
 
   return (
     <section id="portfolio" className="section portfolio">
