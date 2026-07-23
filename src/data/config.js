@@ -58,6 +58,21 @@ export const projects = [
     ],
   },
   {
+    id: "pinkcomfort",
+    title: "Pink Comfort — Positive Behaviour Support",
+    category: "Print Design & Layout",
+    description: "Designed a clean, professional, and accessible informational flyer for NDIS participants.",
+    imageKey: "pcCover",
+    span: "col-span-1 row-span-2",
+    tags: ["Healthcare", "Layout", "Print"],
+    year: "2026",
+    gallery: [
+      "pcCover",
+      "pc01",
+      "pc02"
+    ],
+  },
+  {
     id: "postrd",
     title: "POSTRD — Poster Collection",
     category: "Visual Identity & Artwork",
@@ -72,21 +87,6 @@ export const projects = [
       "postrd01",
       "postrd02",
       "postrd03"
-    ],
-  },
-  {
-    id: "pinkcomfort",
-    title: "Pink Comfort — Positive Behaviour Support",
-    category: "Print Design & Layout",
-    description: "Designed a clean, professional, and accessible informational flyer for NDIS participants.",
-    imageKey: "pcCover",
-    span: "col-span-1 row-span-2",
-    tags: ["Healthcare", "Layout", "Print"],
-    year: "2026",
-    gallery: [
-      "pcCover",
-      "pc01",
-      "pc02"
     ],
   },
 ];
