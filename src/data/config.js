@@ -9,7 +9,7 @@ export const profile = {
   displayName: "ARYAN TALAVIYA.",
   title: "Information Technology Student | Aspiring IT Intern",
   subtitle: "7th Semester IT Student @ SAL College",
-  tagline: "Visual Alchemist.", // Keeping the creative brand
+  tagline: "Graphic Designer.", // Keeping the creative brand
   bio: [
     "I am a passionate and dedicated Information Technology student currently in my 7th semester at SAL College of Engineering (GTU).",
     "I am seeking an internship opportunity where I can apply my academic knowledge, gain practical experience, and grow in a real-world IT environment. My background blends technical IoT development with a strong eye for visual communication.",
