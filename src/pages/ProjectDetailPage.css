@@ -49,32 +49,63 @@
 
 .project-gallery {
   padding-bottom: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
+/* Modern Masonry Layout using CSS Columns */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
+  column-count: 1;
+  column-gap: 24px;
 }
 
 .gallery-item {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 24px;
+  break-inside: avoid;
+  transform: translateZ(0); /* Hardware acceleration */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  position: relative;
+  background-color: var(--bg-card);
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 107, 26, 0.15);
 }
 
 .gallery-image {
   width: 100%;
   height: auto;
   display: block;
+  filter: brightness(0.9);
+  transition: filter 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  filter: brightness(1.1);
+}
+
+/* Responsive Columns */
+@media (min-width: 600px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    column-count: 3;
+    column-gap: 30px;
+  }
+  .gallery-item {
+    margin-bottom: 30px;
+  }
 }
 
 @media (min-width: 768px) {
